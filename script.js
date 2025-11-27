@@ -124,9 +124,20 @@ const resultTitle = document.getElementById("result-title");
 const resultMessage = document.getElementById("result-message");
 const finalScoreValue = document.getElementById("final-score-value");
 
+// Music elements
+const musicBtn = document.getElementById("music-btn");
+const bgMusic = document.getElementById("bg-music");
+
 let currentQuestionIndex = 0;
 let score = 0;
 let optionsLocked = false;
+let isMusicPlaying = false;
+
+// Optional music config
+if (bgMusic) {
+  bgMusic.loop = true;
+  bgMusic.volume = 0.4; // adjust as needed
+}
 
 // Start the quiz
 startBtn.addEventListener("click", () => {
@@ -210,7 +221,7 @@ function showResult() {
 
   finalScoreValue.textContent = score.toString();
 
-  if (score > WIN_THRESHOLD - 1) {
+  if (score >= WIN_THRESHOLD) {
     resultTitle.textContent = "🎉 You’re an AI Wizard!";
     resultMessage.textContent =
       "The Sorting Hat approves! You’ve scored enough to join the AI House at Hogwarts.";
@@ -230,3 +241,24 @@ restartBtn.addEventListener("click", () => {
   quizScreen.classList.remove("hidden");
   loadQuestion();
 });
+
+// === Music Toggle Logic ===
+if (musicBtn && bgMusic) {
+  musicBtn.addEventListener("click", () => {
+    if (bgMusic.paused) {
+      bgMusic
+        .play()
+        .then(() => {
+          isMusicPlaying = true;
+          musicBtn.textContent = "Music: ON ♫";
+        })
+        .catch((err) => {
+          console.error("Audio play was blocked by the browser:", err);
+        });
+    } else {
+      bgMusic.pause();
+      isMusicPlaying = false;
+      musicBtn.textContent = "Music: OFF ♫";
+    }
+  });
+}
