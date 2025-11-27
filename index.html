@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Hogwarts AI Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>Hogwarts AI Quiz</h1>
+            <p class="subtitle">
+                Prove that you are not a Muggle… answer the AI questions and earn your place at Hogwarts!
+            </p>
+        </header>
+
+        <!-- Start Screen -->
+        <section id="start-screen">
+            <p class="intro-text">
+                There are <strong>10 questions</strong> about Artificial Intelligence.<br />
+                Score more than <strong>3 points</strong> to win the challenge.
+            </p>
+            <button id="start-btn" class="btn main-btn">Start the Quiz ✨</button>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="hidden">
+            <div class="hud">
+                <div>Question: <span id="question-number">1</span> / 10</div>
+                <div>Score: <span id="score">0</span></div>
+            </div>
+
+            <div class="question-card">
+                <h2 id="question-text">Question will appear here</h2>
+                <div id="options-container" class="options-container">
+                    <!-- Option buttons will be created by JS -->
+                </div>
+            </div>
+
+            <button id="next-btn" class="btn secondary-btn hidden">Next Question ➜</button>
+        </section>
+
+        <!-- Result Screen -->
+        <section id="result-screen" class="hidden">
+            <h2 id="result-title">Result</h2>
+            <p id="result-message"></p>
+            <p class="final-score">
+                Your Score: <span id="final-score-value">0</span> / 10
+            </p>
+            <button id="restart-btn" class="btn main-btn">Try Again 🔁</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

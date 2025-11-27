@@ -1,0 +1,218 @@
+/* === General Reset === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* === Body & Background (Hogwarts Theme) === */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #f8e7c9;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle at top, rgba(255, 215, 0, 0.25), transparent 60%),
+        radial-gradient(circle at bottom, rgba(138, 43, 226, 0.4), #050308);
+    background-attachment: fixed;
+}
+
+/* === Game Container === */
+.game-container {
+    width: 90%;
+    max-width: 700px;
+    background: rgba(10, 5, 25, 0.9);
+    border-radius: 16px;
+    padding: 24px 20px 28px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+/* === Header === */
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-header h1 {
+    font-size: 2.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fddf6d;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.9);
+}
+
+.subtitle {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    color: #e0d1ff;
+}
+
+/* === Screens === */
+.hidden {
+    display: none;
+}
+
+#start-screen,
+#quiz-screen,
+#result-screen {
+    text-align: center;
+}
+
+/* Intro Text */
+.intro-text {
+    margin: 18px 0 24px;
+    color: #f3e1b1;
+}
+
+/* === HUD (Question number + score) === */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: #f8e7c9;
+}
+
+/* === Question Card === */
+.question-card {
+    background: linear-gradient(145deg, #1e102d, #3a1f59);
+    border-radius: 14px;
+    padding: 18px 16px;
+    border: 1px solid rgba(255, 215, 0, 0.55);
+    box-shadow: 0 0 18px rgba(99, 53, 178, 0.7);
+    margin-bottom: 16px;
+    animation: glow 3s ease-in-out infinite;
+}
+
+.question-card h2 {
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+}
+
+/* Magic Glow Animation */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 14px rgba(255, 215, 0, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 26px rgba(153, 102, 255, 0.7);
+    }
+}
+
+/* === Options === */
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-btn {
+    background: rgba(13, 8, 35, 0.85);
+    border-radius: 999px;
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    color: #f8e7c9;
+    padding: 10px 12px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease,
+        box-shadow 0.1s ease;
+}
+
+.option-btn:hover {
+    background: rgba(255, 215, 0, 0.12);
+    transform: translateY(-1px);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Correct / Wrong states */
+.option-btn.correct {
+    background: #2e7d32;
+    border-color: #a5d6a7;
+    box-shadow: 0 0 10px rgba(165, 214, 167, 0.9);
+}
+
+.option-btn.wrong {
+    background: #b71c1c;
+    border-color: #ef9a9a;
+    box-shadow: 0 0 10px rgba(239, 154, 154, 0.9);
+}
+
+.option-btn.disabled {
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+/* === Buttons === */
+.btn {
+    border-radius: 999px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.98rem;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease,
+        box-shadow 0.1s ease;
+}
+
+.main-btn {
+    background: linear-gradient(135deg, #fddf6d, #f4a321);
+    color: #3c2107;
+    font-weight: 600;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+}
+
+.main-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 18px rgba(255, 215, 0, 1);
+}
+
+.secondary-btn {
+    margin-top: 8px;
+    background: linear-gradient(135deg, #6c4ccf, #35186f);
+    color: #f8e7ff;
+    border: 1px solid rgba(255, 215, 0, 0.6);
+}
+
+.secondary-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 14px rgba(108, 76, 207, 0.9);
+}
+
+/* === Result Screen === */
+#result-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+#result-message {
+    margin-bottom: 6px;
+    font-size: 1rem;
+    color: #f3e1b1;
+}
+
+.final-score {
+    margin-bottom: 18px;
+    font-size: 1.05rem;
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+    .game-container {
+        padding: 18px 14px 22px;
+    }
+
+    .game-header h1 {
+        font-size: 1.7rem;
+    }
+
+    .question-card h2 {
+        font-size: 1.02rem;
+    }
+}
