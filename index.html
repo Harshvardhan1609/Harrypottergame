@@ -7,6 +7,11 @@
 </head>
 <body>
     <div class="game-container">
+        <!-- Music Button (top-right) -->
+        <button id="music-btn" class="music-btn" aria-label="Toggle Music">
+            Music: OFF ♫
+        </button>
+
         <header class="game-header">
             <h1>Hogwarts AI Quiz</h1>
             <p class="subtitle">
@@ -49,6 +54,10 @@
             </p>
             <button id="restart-btn" class="btn main-btn">Try Again 🔁</button>
         </section>
+
+        <!-- Background Music -->
+        <!-- Replace 'harry_potter_theme.mp3' with your own audio file path -->
+        <audio id="bg-music" src="harry_potter_theme.mp3"></audio>
     </div>
 
     <script src="script.js"></script>
