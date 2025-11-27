@@ -28,6 +28,32 @@ body {
     padding: 24px 20px 28px;
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
     border: 1px solid rgba(255, 215, 0, 0.4);
+    position: relative; /* for music button positioning */
+}
+
+/* === Music Button (top-right) === */
+.music-btn {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 215, 0, 0.7);
+    background: rgba(15, 8, 40, 0.95);
+    color: #fddf6d;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease,
+        box-shadow 0.1s ease;
+}
+
+.music-btn:hover {
+    background: rgba(255, 215, 0, 0.18);
+    transform: translateY(-1px);
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.9);
 }
 
 /* === Header === */
@@ -214,5 +240,12 @@ body {
 
     .question-card h2 {
         font-size: 1.02rem;
+    }
+
+    .music-btn {
+        font-size: 0.72rem;
+        padding: 5px 10px;
+        top: 10px;
+        right: 10px;
     }
 }
